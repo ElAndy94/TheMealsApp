@@ -1,13 +1,13 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 import CategoriesScreen from '../screens/CategoriesScreen';
-import CateogryMealsScreen from '../screens/CategoryMealsScreen';
+import CategoryMealsScreen from '../screens/CategoryMealsScreen';
 import MealDetailScreen from '../screens/MealsDetailScreen';
 
 const MealsNavigator = createStackNavigator({
   Categories: CategoriesScreen,
-  CateogryMeals: {
-    screen: CateogryMealsScreen
+  CategoryMeals: {
+    screen: CategoryMealsScreen
   },
   MealDetail: MealDetailScreen
 });
