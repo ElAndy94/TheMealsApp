@@ -12,11 +12,11 @@ const MealItem = props => {
     <TouchableOpacity onPress={props.onSelectMeal}>
       <View style={styles.mealItem}>
         <View style={{ ...styles.mealRow, ...styles.mealHeader }}>
-          <ImageBackground
-            source={{ uri: props.image }}
-            style={styles.bgImage}
-          />
-          <Text>{props.title}</Text>
+          <ImageBackground source={{ uri: props.image }} style={styles.bgImage}>
+            <Text style={styles.title} numberOfLines={1}>
+              {props.title}
+            </Text>
+          </ImageBackground>
         </View>
         <View style={{ ...styles.mealRow, ...styles.mealDetail }}>
           <Text>{props.duration}m</Text>
@@ -36,7 +36,8 @@ const styles = StyleSheet.create({
   },
   bgImage: {
     width: '100%',
-    height: '100%'
+    height: '100%',
+    justifyContent: 'flex-end'
   },
   mealRow: {
     flexDirection: 'row'
@@ -47,6 +48,15 @@ const styles = StyleSheet.create({
   mealDetail: {
     paddingHorizontal: 10,
     justifyContent: 'space-between'
+  },
+  title: {
+    fontFamily: 'open-sans-bold',
+    fontSize: 22,
+    color: 'white',
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    paddingVertical: 5,
+    paddingHorizontal: 12,
+    textAlign: 'center'
   }
 });
 
